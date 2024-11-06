@@ -1,4 +1,3 @@
-
 # Neural Network for Image Classification using MNIST Dataset
 
 ## Objective
@@ -11,7 +10,7 @@ This project builds a neural network to classify handwritten digit images from t
 ## Project Structure
 - `neural_network.py`: Contains the code to load, preprocess, and classify images from the uploaded MNIST `.idx` files.
 - `requirements.txt`: Lists the required libraries for the project.
-- `data/`: Contains the MNIST `.idx` files used for training and testing.
+- `data/`: Contains the MNIST `.idx` files used for training and testing, along with a sample image for testing.
 
 ## Installation and Setup
 
@@ -21,13 +20,20 @@ This project builds a neural network to classify handwritten digit images from t
     cd Image-Classification-Project
     ```
 
-2. **Install Required Packages**:
+2. **Place Dataset in the `data/` Directory**:
+   Extract the `MNIST Dataset.zip` file into the `data/` directory so it includes the following files:
+   - `train-images.idx3-ubyte`
+   - `train-labels.idx1-ubyte`
+   - `t10k-images.idx3-ubyte`
+   - `t10k-labels.idx1-ubyte`
+
+3. **Install Required Packages**:
     Use `requirements.txt` to install the necessary Python packages:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Run the Model**:
+4. **Run the Model**:
     Execute the neural network script to train and evaluate the model on the MNIST dataset:
     ```bash
     python neural_network.py
@@ -38,10 +44,8 @@ This project builds a neural network to classify handwritten digit images from t
 ### Training the Model
 The `neural_network.py` script loads the MNIST dataset from `.idx` files, preprocesses it, and trains a neural network model. After training, it evaluates the model on the test set, outputting the test accuracy.
 
-### Testing on Custom Images
-For testing on new images, the following steps can be added:
-1. Preprocess the image to match the 28x28 grayscale format used in MNIST.
-2. Use `model.predict()` on the preprocessed image to get a classification result.
+### Testing on the Sample Image
+The script also includes a function to classify a sample image located in `data/sample_image.png`. This image will be displayed, and the model's prediction for the digit will be printed.
 
 ## Final Outcomes
 After training, the model achieves over 90% accuracy on the MNIST test set, demonstrating effective image classification capabilities for handwritten digits.
